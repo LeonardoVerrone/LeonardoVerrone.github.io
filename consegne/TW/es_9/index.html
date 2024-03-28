@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="row">
+          <h1 class="col my-1 mx-0">Calendar App</h1>
+        </div>
+      </header>
+      <main>
+        <div class="row">
+          <section class="col my-1">
+            <h2>
+              Marzo 2024
+            </h2>
+            <p>
+            Il calendario di seguito è stato realizzato usando il sistema Grid di CSS. Al contrario, l'allineamento dell'header e dei due main è stato realizzato usando le proprietà Flex.
+            <ul>
+              <li>
+                La pseudo-class <span class="bold mauve">:hover</span> consente di modificare dello stile quando si passa il mouse sulle date.
+              </li>
+              <li>
+                La psuedo-class <span class="bold mauve">:focus</span> consente di modificare lo stile quando si clicca su un elemento come un input o un bottone.
+              </li>
+              <li>
+                La pseudo-class <span class="bold mauve">:active</span> serve per dare un feedback all'utente che un elemento ha ricevuto un evento come un click.
+              </li>
+            </ul>
+            </p>
+          </section>
+        </div> 
+        <section class="col my-1">
+          <div class="calendar">
+            <h2 class="year">2024</h2>
+            <div class="arrow left-arrow inactive"></div>
+            <input value="Jen" type="button" class="month-of-year inactive"></input>
+            <input value="Feb" type="button" class="month-of-year inactive"></input>
+            <input value="Mar" type="button" class="month-of-year selected"></input>
+            <input value="Apr" type="button" class="month-of-year selected"></input>
+            <input value="May" type="button" class="month-of-year"></input>
+            <input value="Jun" type="button" class="month-of-year"></input>
+            <input value="Jul" type="button" class="month-of-year"></input>
+            <input value="Aug" type="button" class="month-of-year"></input>
+            <input value="Sep" type="button" class="month-of-year"></input>
+            <input value="Oct" type="button" class="month-of-year"></input>
+            <input value="Nov" type="button" class="month-of-year"></input>
+            <input value="Dec" type="button" class="month-of-year"></input>
+            <div class="arrow right-arrow"></div>
+            <div class="divider"></div>
+            <div class="arrow left-arrow inactive"></div>
+            <div class="month-detail-container">
+              <div class="month-detail">
+                <h2 class="month-name">March</h2>
+                <div class="day-of-week weekend">Su </div>
+                <div class="day-of-week">Mo</div>
+                <div class="day-of-week">Tu</div>
+                <div class="day-of-week">We</div>
+                <div class="day-of-week">Th</div>
+                <div class="day-of-week">Fr</div>
+                <div class="day-of-week weekend">Sa</div>
+                <div class="divider"></div>
+                <input type="button" value="25" class="day-of-month inactive weekend"></input>
+                <input type="button" value="26" class="day-of-month inactive"></input>
+                <input type="button" value="27" class="day-of-month inactive"></input>
+                <input type="button" value="28" class="day-of-month inactive"></input>
+                <input type="button" value="29" class="day-of-month inactive"></input>
+                <input type="button" value="1" class="day-of-month"></input>
+                <input type="button" value="2" class="day-of-month weekend"></input>
+                <input type="button" value="3" class="day-of-month weekend"></input>
+                <input type="button" value="4" class="day-of-month"></input>
+                <input type="button" value="5" class="day-of-month"></input>
+                <input type="button" value="6" class="day-of-month"></input>
+                <input type="button" value="7" class="day-of-month"></input>
+                <input type="button" value="8" class="day-of-month"></input>
+                <input type="button" value="9" class="day-of-month weekend"></input>
+                <input type="button" value="10" class="day-of-month weekend"></input>
+                <input type="button" value="11" class="day-of-month"></input>
+                <input type="button" value="12" class="day-of-month"></input>
+                <input type="button" value="13" class="day-of-month"></input>
+                <input type="button" value="14" class="day-of-month"></input>
+                <input type="button" value="15" class="day-of-month"></input>
+                <input type="button" value="16" class="day-of-month weekend"></input>
+                <input type="button" value="17" class="day-of-month weekend"></input>
+                <input type="button" value="18" class="day-of-month"></input>
+                <input type="button" value="19" class="day-of-month"></input>
+                <input type="button" value="20" class="day-of-month"></input>
+                <input type="button" value="21" class="day-of-month"></input>
+                <input type="button" value="22" class="day-of-month"></input>
+                <input type="button" value="23" class="day-of-month weekend"></input>
+                <input type="button" value="24" class="day-of-month weekend"></input>
+                <input type="button" value="25" class="day-of-month"></input>
+                <input type="button" value="26" class="day-of-month"></input>
+                <input type="button" value="27" class="day-of-month"></input>
+                <input type="button" value="28" class="day-of-month"></input>
+                <input type="button" value="29" class="day-of-month"></input>
+                <input type="button" value="30" class="day-of-month weekend"></input>
+                <input type="button" value="31" class="day-of-month weekend"></input>
+                <input type="button" value="1" class="day-of-month inactive"></input>
+                <input type="button" value="2" class="day-of-month inactive"></input>
+                <input type="button" value="3" class="day-of-month inactive"></input>
+                <input type="button" value="4" class="day-of-month inactive"></input>
+                <input type="button" value="5" class="day-of-month inactive"></input>
+                <input type="button" value="6" class="day-of-month inactive weekend"></input>
+              </div>
+            </div>
+            <div class="month-detail-container">
+              <div class="month-detail">
+                <h2 class="month-name">April</h2>
+                <div class="day-of-week weekend">Su </div>
+                <div class="day-of-week">Mo</div>
+                <div class="day-of-week">Tu</div>
+                <div class="day-of-week">We</div>
+                <div class="day-of-week">Th</div>
+                <div class="day-of-week">Fr</div>
+                <div class="day-of-week weekend">Sa</div>
+                <div class="divider"></div>
+                <input type="button" value="31" class="day-of-month inactive weekend"></input>
+                <input type="button" value="1" class="day-of-month"></input>
+                <input type="button" value="2" class="day-of-month"></input>
+                <input type="button" value="3" class="day-of-month"></input>
+                <input type="button" value="4" class="day-of-month"></input>
+                <input type="button" value="5" class="day-of-month"></input>
+                <input type="button" value="6" class="day-of-month weekend"></input>
+                <input type="button" value="7" class="day-of-month weekend"></input>
+                <input type="button" value="8" class="day-of-month"></input>
+                <input type="button" value="9" class="day-of-month"></input>
+                <input type="button" value="10" class="day-of-month"></input>
+                <input type="button" value="11" class="day-of-month"></input>
+                <input type="button" value="12" class="day-of-month"></input>
+                <input type="button" value="13" class="day-of-month weekend"></input>
+                <input type="button" value="14" class="day-of-month weekend"></input>
+                <input type="button" value="15" class="day-of-month"></input>
+                <input type="button" value="16" class="day-of-month"></input>
+                <input type="button" value="17" class="day-of-month"></input>
+                <input type="button" value="18" class="day-of-month"></input>
+                <input type="button" value="19" class="day-of-month"></input>
+                <input type="button" value="20" class="day-of-month weekend"></input>
+                <input type="button" value="21" class="day-of-month weekend"></input>
+                <input type="button" value="22" class="day-of-month"></input>
+                <input type="button" value="23" class="day-of-month"></input>
+                <input type="button" value="24" class="day-of-month"></input>
+                <input type="button" value="25" class="day-of-month"></input>
+                <input type="button" value="26" class="day-of-month"></input>
+                <input type="button" value="27" class="day-of-month weekend"></input>
+                <input type="button" value="28" class="day-of-month weekend"></input>
+                <input type="button" value="29" class="day-of-month"></input>
+                <input type="button" value="30" class="day-of-month"></input>
+                <input type="button" value="1" class="day-of-month inactive"></input>
+                <input type="button" value="2" class="day-of-month inactive"></input>
+                <input type="button" value="3" class="day-of-month inactive"></input>
+                <input type="button" value="4" class="day-of-month inactive weekend"></input>
+              </div>
+            </div>
+            <div class="arrow right-arrow"></div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Leonardo Verrone &hyphen; matricola: 0001078280 &hyphen; leonardo.verrone@studio.unibo.it</p>
+      </footer>
+  </body>
+
+</html>
