@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pomodoro App</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <main id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col"> 
+            <div>Study time</div>
+            <div class="text-m mt-1 noselect" data-timer-input="study">&nbsp;</div>
+          </div>
+          <div class="col"> 
+            <div>Break time</div>
+            <div class="text-m mt-1 noselect" data-timer-input="break">&nbsp;</div>
+          </div>
+          <div class="col">
+            <div>Pomodoro sessions</div>
+            <div class="text-m mt-1 noselect" data-timer-input="sessions">&nbsp;</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div id="motivator" class="bold text-xl">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col blob" data-pom-status>
+            <div id="clock" class="noselect">&nbsp;</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div id="action" class="text-m noselect" data-pom-status></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js">
+    </script>
+  </body>
+</html>
+
