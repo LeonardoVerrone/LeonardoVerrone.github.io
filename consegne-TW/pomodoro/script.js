@@ -3,6 +3,9 @@
 // e quelle che devono essere fatte
 let session;
 
+// input che ho selezionato, viene aggiornato quando ci clicco sopra
+let selectedInput;
+
 const padZero = (value) => value < 10? '0' + value : value; 
 
 // crea una nuova sessione
@@ -26,10 +29,17 @@ const createNewSession = function(studyMinutes = 25, breakMinutes = 5, totalSess
  * ("idle" -> "studying" -> "break" -> "studying" -> "break" -> ...)
  */
 const sessionProgress = () => {
+
+  // calcolo lo stato successivo in base all'attuale
   switch(session.status) {
     case "idle":
+      if (session.totalSessions < 1) {  // per partire devo avere almeno una sessione
+        createNewSession();
+        break;
+      }
+
       session.status = "studying";
-      session.currentSession += 1;
+      session.currentSession = 1;
       session.timerDuration = session.studyMinutes * 60;
       session.timerId = createInterval();
       break;
@@ -39,16 +49,17 @@ const sessionProgress = () => {
       session.timerId = createInterval();
       break;
     case "break":
-      session.currentSession += 1;
-      if (session.currentSession > session.totalSessions) {
+      if ((++session.currentSession) > session.totalSessions) { // vero se ho completato le sessioni
         createNewSession();
         break;
       }
+
       session.status = "studying";
       session.timerDuration = session.studyMinutes * 60;
       session.timerId = createInterval();
       break;
   }
+
 
   addAnimationRules();
   resetAnimations();
@@ -90,7 +101,7 @@ const updateInputs = () => {
   document.querySelectorAll("[data-timer-input]").forEach((item) => {
     switch(item.dataset.timerInput) {
       case "sessions":
-        item.innerText = padZero(session.currentSession);
+        item.innerText = padZero(session.totalSessions);
         break;
       case "study":
         item.innerText = padZero(session.studyMinutes) + ":00";
@@ -106,9 +117,9 @@ const updateInputs = () => {
  * Aggiorna il counter delle sessioni
  */
 const updateSessionsCounter = () => {
-  if (session.status === "idle" || selectedInput?.dataset.timerInput === "sessions") 
-    document.querySelector("[data-timer-input='sessions']").innerText = session.totalSessions;
-  else 
+  if (session.status === "idle" || selectedInput?.dataset.timerInput === "sessions")
+    document.querySelector("[data-timer-input='sessions']").innerText = padZero(session.totalSessions);
+  else
     document.querySelector("[data-timer-input='sessions']").innerText = `${session.currentSession} / ${session.totalSessions}`;
 };
 
@@ -201,9 +212,6 @@ const resetAnimations = () => {
 // creo una nuova sessione
 createNewSession();
 
-// input che ho selezionato, viene aggiornato quando ci clicco sopra
-let selectedInput;
-
 // eventi per l'input da tastiera su "Study time", "Break time", e "Pomodoro sessions"
 document.addEventListener("keydown", (event) => {
   if (!selectedInput) 
@@ -239,12 +247,12 @@ document.querySelectorAll("*[data-timer-input]").forEach((item) => {
     selectedInput = item;
     selectedInput.focus();
     if (item.getAttribute("data-timer-input") === "sessions") {
-      item.innerText = "";
-      item.addEventListener("focusout", (e) => {
-        item.innerText = session.totalSessions;
+      item.addEventListener("blur", (e) => {
+        item.innerText = padZero(session.totalSessions);
       });
     }
   });
+  item.addEventListener("blur", (event) => selectedInput = null);
 });
 
 // con il click sul pulsante azione la sessione progredisce di stato
